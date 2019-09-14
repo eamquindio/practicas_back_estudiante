@@ -28,7 +28,9 @@
     "moment-timezone": "^0.5.23",
     "pg": "^7.4.1",
     "request": "^2.88.0",
-    "request-promise": "^4.2.2"
+    "request-promise": "^4.2.2",
+    "run": "^1.4.0",
+    "test": "^0.6.0"
   },
   "devDependencies": {
     "apidoc": "^0.17.6",

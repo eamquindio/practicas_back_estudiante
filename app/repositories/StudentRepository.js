@@ -3,8 +3,8 @@ const DB = require('../utils/DB');
 
 StudentRepository.findByName = (faculty, programm, semester) =>
   DB('student').select('*')
-    .where({ faculty }).orwhere({ programm })
-    .orwhere({ semester });
+    .where({ faculty }).orWhere({ programm })
+    .orWhere({ semester });
 
 StudentRepository.create = students => DB('student').insert(students).returning('*');
 

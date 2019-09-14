@@ -12,8 +12,8 @@ router.put('/persons/:id(\\d+)', PersonController.edit);
 router.get('/persons/find_by_name', PersonController.findByName);
 router.get('/persons/all', PersonController.listAll);
 
-router.get('/student/find_by_namee', StudentController.findByName);
-router.post('/student', StudentController.save);
-router.get('/student/:id(\\d+)', StudentController.find);
+router.get('/students/find_by_name', StudentController.findByName);
+router.post('/students', StudentController.save);
+router.get('/students/:id(\\d+)', StudentController.find);
 
 module.exports = router;

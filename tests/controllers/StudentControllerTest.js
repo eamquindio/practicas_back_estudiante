@@ -17,7 +17,7 @@ describe('Student CRUD flows', () => {
 
   it('find student by name test', async () => {
     await StudentRepository.create([{
-      id: 1,
+      id: '1',
       namee: 'mauricio',
       lastname: 'ruiz',
       cellphone: '328732',
@@ -28,7 +28,7 @@ describe('Student CRUD flows', () => {
       semester: '2',
     },
     {
-      id: 2,
+      id: '2',
       namee: 'manuel',
       lastname: 'echeverry',
       cellphone: '754674',
@@ -54,13 +54,14 @@ describe('Student CRUD flows', () => {
           faculty: 'ingenieria',
           programm: 'software',
           semester: '2',
+
         });
       });
   });
 
   it('find student by name empty test', async () => chai
     .request(app)
-    .get(`${API}/find_by_namee?faculty=diseno&&programm=negocios&&semester=7`)
+    .get(`${API}/find_by_name?faculty= &&programm= &&semester= `)
     .then(async (response) => {
       assert.equal(response.status, 204);
     }));

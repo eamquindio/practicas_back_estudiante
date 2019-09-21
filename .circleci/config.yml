@@ -5,8 +5,12 @@ jobs:
       # specify the version you desire here
       - image: circleci/node:10
         environment:
-          DB_CONNECTION: postgres://user:password@localhost:5432/postgres
-      # Specify service dependencies here if necessary
+          DB_NAME: 'postgres',
+          DB_USER: 'user',
+          DB_PASS: 'password',
+          DB_HOST: 'localhost',
+          DB_PORT: '5432',      
+  # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
       # documented at https://circleci.com/docs/2.0/circleci-images/
       # - image: circleci/mongo:3.4.4

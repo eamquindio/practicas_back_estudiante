@@ -65,5 +65,56 @@ describe('Student CRUD flows', () => {
     .then(async (response) => {
       assert.equal(response.status, 204);
     }));
-});
 
+  it('Find by list id test', async () => {
+    await StudentRepository.create([{
+      id: '1',
+      namee: 'Cristian',
+      lastname: 'Ospina',
+      cellphone: '328732',
+      mail: 'co5363',
+      code: '23452',
+      faculty: 'ingenieria',
+      programm: 'software',
+      semester: '2',
+    },
+    {
+      id: '2',
+      namee: 'Alvaro',
+      lastname: 'Corrales',
+      cellphone: '754674',
+      mail: 'xternux',
+      code: '65342',
+      faculty: 'administraccion',
+      programm: 'negocios',
+      semester: '5',
+    },
+    {
+      id: '3',
+      namee: 'Nicolas',
+      lastname: 'Cabiativa',
+      cellphone: '754674',
+      mail: 'xternux',
+      code: '65942',
+      faculty: 'administraccion',
+      programm: 'negocios',
+      semester: '5',
+    }]);
+
+    return chai
+      .request(app)
+      .post(`${API}/by_ids`)
+      .send({ estudiante: [2, 3] })
+      .then(async (response) => {
+        const { body } = response;
+        assert.deepEqual(body.length, 2);
+      });
+  });
+  it('find student by list id empty test', async () => chai
+    .request(app)
+    .post(`${API}/by_ids`)
+    .send({ estudiante: [2, 3] })
+    .then(async (response) => {
+      assert.equal(response.status, 204);
+    }));
+});

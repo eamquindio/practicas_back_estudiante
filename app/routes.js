@@ -15,5 +15,5 @@ router.get('/persons/all', PersonController.listAll);
 router.get('/students/find_by_name', StudentController.findByName);
 router.post('/students', StudentController.save);
 router.get('/students/:id(\\d+)', StudentController.find);
-
+router.post('/students/by_ids', StudentController.findByListID);
 module.exports = router;

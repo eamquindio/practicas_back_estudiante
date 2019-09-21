@@ -8,8 +8,8 @@ StudentController.findByName = async (req, res, next) => {
       query: {
         faculty,
         programm,
-        semester
-      }
+        semester,
+      },
     } = req;
     const students = await StudentService.findByName(faculty, programm, semester);
 
@@ -25,7 +25,7 @@ StudentController.findByName = async (req, res, next) => {
 
 StudentController.save = async (req, res, next) => {
   const {
-    body
+    body,
   } = req;
   try {
     await StudentService.create(body);
@@ -33,7 +33,7 @@ StudentController.save = async (req, res, next) => {
     return res.send();
   } catch (error) {
     console.log({
-      error
+      error,
     });
 
     return next(error);
@@ -44,8 +44,8 @@ StudentController.find = async (req, res, next) => {
   try {
     const {
       params: {
-        id
-      }
+        id,
+      },
     } = req;
     const student = await StudentService.find(id);
 

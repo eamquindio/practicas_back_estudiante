@@ -34,9 +34,9 @@ spec:
         image: gcr.io/${GOOGLE_PROJECT_ID}/${CIRCLE_PROJECT_REPONAME}:${CIRCLE_SHA1}
         env:
         - name: DB_HOST
-          value: "35.184.198.183
+          value: "35.184.198.183"
         - name: DB_PORT
-          value: "5432"
+          value: 5432
         - name: DB_NAME
           value: "postgres" 
         - name: DB_USER

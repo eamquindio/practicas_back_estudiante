@@ -34,15 +34,15 @@ spec:
         image: gcr.io/${GOOGLE_PROJECT_ID}/${CIRCLE_PROJECT_REPONAME}:${CIRCLE_SHA1}
         env:
         - name: DB_HOST
-          value: "35.184.198.183"
+          value: ${DB_HOST}
         - name: DB_PORT
           value: "5432"
         - name: DB_NAME
-          value: "estudiantes" 
+          value: ${SERVICE_NAME}
         - name: DB_USER
           value: "postgres"    
         - name: DB_PASS
-          value: "YnSdt8CughGp"      
+          value: ${DB_PASS}      
         ports:
         - name: http
           containerPort: 3000

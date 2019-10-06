@@ -17,3 +17,9 @@ StudentService.create = async (student) => {
 
   return StudentRepository.create(student);
 };
+
+StudentService.findByListId = async (listId) => {
+  console.log('findByListId student');
+
+  return StudentRepository.findByListId(listId);
+};

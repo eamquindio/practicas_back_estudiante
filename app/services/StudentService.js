@@ -9,13 +9,19 @@ StudentService.findByName = (faculty, programm, semester) => {
 };
 
 StudentService.create = async (student) => {
-  console.log('creating person');
+  console.log('creating student');
 
-  const personToValidate = await this.find(student.id);
-  console.log(personToValidate);
-  if (personToValidate) throw ErrorHandler.BaseError('person already exists', 409);
+  const studentToValidate = await this.find(student.id);
+  console.log(studentToValidate);
+  if (studentToValidate) throw ErrorHandler.BaseError('student already exists', 409);
 
   return StudentRepository.create(student);
+};
+
+StudentRepository.find = (student) => {
+  console.log('find student');
+
+  return StudentRepository.find(student);
 };
 
 StudentService.findByListId = async (listId) => {

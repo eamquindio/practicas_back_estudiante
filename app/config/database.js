@@ -1,11 +1,11 @@
 const MAX_CONNECTION_POOLSIZE = 5;
 
 const {
-  DB_NAME = 'student',
+  DB_NAME = 'estudiantes',
   DB_USER = 'postgres',
-  DB_PASS = '0000',
+  DB_PASS = 'postgres',
   DB_HOST = 'localhost',
-  DB_PORT = 5432,
+  DB_PORT = 5433,
 } = process.env;
 
 module.exports = {

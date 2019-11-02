@@ -75,7 +75,6 @@ StudentController.findByListID = async (req, res, next) => {
 };
 
 StudentController.findAll = async (req, res, next) => {
-  const { body } = req;
   try {
     const students = await StudentService.findAll();
 

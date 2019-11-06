@@ -18,7 +18,7 @@ StudentService.create = async (student) => {
   return StudentRepository.create(student);
 };
 
-StudentRepository.find = (student) => {
+StudentService.find = (student) => {
   console.log('find student');
 
   return StudentRepository.find(student);

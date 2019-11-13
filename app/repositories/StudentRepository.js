@@ -11,3 +11,5 @@ StudentRepository.create = students => DB('student').insert(students).returning(
 StudentRepository.find = id => DB('student').select('*').where({ id }).first();
 
 StudentRepository.findByListId = listId => DB('student').select('*').whereIn('id', listId);
+
+StudentRepository.findAll = () => DB('student').select('*');

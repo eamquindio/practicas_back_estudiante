@@ -74,15 +74,14 @@ StudentController.findByListID = async (req, res, next) => {
   }
 };
 
-StudentController.findAll = async (req, res, next) => {
+StudentController.listAll = async (req, res, next) => {
   try {
-    const students = await StudentService.findAll();
+    const estudents = await StudentService.listAll();
+    if (estudents.length === 0) return res.status(204).send(estudents);
 
-    if (students.length === 0) return res.status(204).send(students);
-
-    return res.send(students);
+    return res.send(estudents);
   } catch (error) {
-    console.log({ error });
+    console.log(error);
 
     return next(error);
   }

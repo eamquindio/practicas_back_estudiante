@@ -30,8 +30,8 @@ StudentService.findByListId = async (listId) => {
   return StudentRepository.findByListId(listId);
 };
 
-StudentService.findAll = async () => {
-  console.log('find all student');
+StudentService.listAll = () => {
+  console.log('find all estudents');
 
-  return StudentRepository.findAll();
+  return StudentRepository.listAll();
 };

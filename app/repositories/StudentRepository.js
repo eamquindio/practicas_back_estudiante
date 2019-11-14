@@ -12,4 +12,4 @@ StudentRepository.find = id => DB('student').select('*').where({ id }).first();
 
 StudentRepository.findByListId = listId => DB('student').select('*').whereIn('id', listId);
 
-StudentRepository.findAll = () => DB('student').select('*');
+StudentRepository.listAll = () => DB('student').select('*');

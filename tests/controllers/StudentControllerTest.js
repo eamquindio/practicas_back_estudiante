@@ -155,7 +155,7 @@ describe('Student CRUD flows', () => {
 
     return chai
       .request(app)
-      .post(`${API}/list`)
+      .post(`${API}/all`)
       .send({ })
       .then(async (response) => {
         const { body } = response;
@@ -164,7 +164,7 @@ describe('Student CRUD flows', () => {
   });
   it('find all empty test', async () => chai
     .request(app)
-    .post(`${API}/list`)
+    .post(`${API}/all`)
     .send({ })
     .then(async (response) => {
       assert.equal(response.status, 204);
